@@ -1,0 +1,12 @@
+Package: mvstats
+Title: A package for data analysis
+Version: 0.0.10
+Description: This is my first package.
+Suggests: stringr, spdep
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+NeedsCompilation: no
+Packaged: 2023-11-23 03:55:00 UTC; admin
+Author: John Doe [aut, cre]
+Maintainer: John Doe <johndoe@example.com>
