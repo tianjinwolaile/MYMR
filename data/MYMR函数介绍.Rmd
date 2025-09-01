@@ -1,0 +1,54 @@
+---
+title: "MYMR教程"
+author: "杨"
+date: "2025-08-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+library(MYMR)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r }
+vcf=system.file("data", "eqtl-a-ENSG00000112715.vcf.gz", package = "MYMR")
+data1=MYMR::vcf_data.table_to_TwosampleMR(vcf = vcf,type = "exposure")
+data2=MYMR::vcf_to_csv_TwosampleMR(vcf = vcf,batch_size = 10^6,type = "exposure")
+data3=MYMR::vcf_to_TwosampleMR(vcf = vcf,type = "exposure")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+data4=data1[1:10,]
+data4$eaf.exposure=NA
+data4=MYMR::SNP2eaf(data4)
+data5=data1[1:10,]
+data5$eaf.exposure=NA
+get_freq_from_1000G(plink_path = plinkbinr::get_plink_exe(),bfile_path = "E:\\wd\\MR\\ld_clump_local\\bfile\\EUR/EUR","E:\\wd\\MR\\ld_clump_local\\bfile\\")
+data5=get_eaf_from_1000G(data5,"E:\\wd\\MR\\ld_clump_local\\bfile\\EUR_freq.frq")
+data6=data1[1:10,]
+data6$eaf.exposure=NA
+data6=MYMR::snp_add_exposure_eaf(data6)
+library(MungeSumstats)
+
+outcome=fread("D:\\R_HOME\\trypackage\\MYMR\\data\\outcome_chr_pos.csv")
+
+colnames(outcome)
+outcome=outcome[,c(16,17,2,3,10,8,9)]
+head(outcome)
+colnames(outcome)=c( "CHR" , "BP" ,  "A1" ,  "A2"  , "P"  ,  "BETA", "SE"  )#这一步必须做
+MYMR::process_chunked_sumstats(outcome)
+```

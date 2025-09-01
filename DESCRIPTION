@@ -1,12 +1,16 @@
-Package: mvstats
-Title: A package for data analysis
-Version: 0.0.10
-Description: This is my first package.
-Suggests: stringr, spdep
+Package: MYMR
+Title: a pckage of read vcf.gz file
+Version: 1.0.0
+Authors@R: 
+    person("yang can", email = "2825960140@qq.com", role = c("aut", "cre"))
+Description: This is my first MR package.
+Imports: data.table,tidyverse,TwoSampleMR,dplyr, igraph, vcfR,GenomicRanges,MungeSumstats
+Suggests: vcfR
+NeedsCompilation: yes
+LazyData: true
 License: GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.2.3
-NeedsCompilation: no
-Packaged: 2023-11-23 03:55:00 UTC; admin
 Author: John Doe [aut, cre]
-Maintainer: John Doe <johndoe@example.com>
+Maintainer: yang can <johndoe@example.com>
+Depends: R (>= 3.5.0)
+RoxygenNote: 7.3.2
