@@ -1,5 +1,5 @@
 # MYMR
-## et_freq_from_1000G函数介绍，需要提供plink软件路径，以及使用的人群基因组本地数据，以及输出的frq文件路径
+## get_freq_from_1000G函数介绍，需要提供plink软件路径，以及使用的人群基因组本地数据，以及输出的frq文件路径
 ## get_eaf_from_1000G函数介绍，这里需要提供一个TwoSampleMR格式的数据，然后还需要提供一个.frq文件，该文件由get_freq_from_1000G函数计算得到
 
 maffile_path="E:\\wd\\MR\\ld_clump_local\\bfile\\"
