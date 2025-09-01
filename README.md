@@ -11,10 +11,10 @@ exp1=get_eaf_from_1000G(exp,path = "E:\\wd\\MR\\ld_clump_local\\bfile\\EUR_freq.
 
 ## process_chunked_sumstats函数介绍，这里需要提供的数据列名包含chr	pos两列，由于内存限制，这里采用分批转换，可根据内存大小自行调整chunk_size自行调整，dbSNP = "144"，目前到155版本，ref_genome可选GRCh37或者GRCh38，可自行设置输出名字
 
-outcome=fread("outcome_chr_pos.csv")
-colnames(outcome)
-outcome=outcome[,c(16,17,2,3,10,8,9)]
-head(outcome)
+outcome=fread("outcome_chr_pos.csv");
+colnames(outcome);
+outcome=outcome[,c(16,17,2,3,10,8,9)];
+head(outcome);
 process_chunked_sumstats(
 outcome = outcome,chunk_size = 10^6,
 dbSNP = "144",
