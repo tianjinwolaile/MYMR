@@ -1,8 +1,9 @@
 # MYMR
 # MYMR
-#maffile_path="E:\\wd\\MR\\ld_clump_local\\bfile\\"
-#' #exp1=get_eaf_from_1000G(exp,path = "E:\\wd\\MR\\ld_clump_local\\bfile\\EUR_freq.frq")
-#plink_path = "E:\\wd\\KJ\\dxw\\step3\\step3_1\\plink_win64_20231018\\plink.exe"
+# maffile_path="E:\\wd\\MR\\ld_clump_local\\bfile\\"
+# #exp1=get_eaf_from_1000G(exp,path = "E:\\wd\\MR\\ld_clump_local\\bfile\\EUR_freq.frq")
+
+plink_path = "E:\\wd\\KJ\\dxw\\step3\\step3_1\\plink_win64_20231018\\plink.exe"
 #' #bfile_path = "E:\\wd\\MR\\ld_clump_local\\bfile\\EUR\\AMR" # 欧洲人群基因组本地数据
 #' #maffile_path="E:\\wd\\MR\\ld_clump_local\\bfile\\"
 #' ## fileFrequency.frq文件路径
